@@ -1,0 +1,41 @@
+@using CRUDelicious.Models
+@model Dish
+
+<h1 style="text-align: center;">Edit @Model.Name</h1>
+<a href="/"><button class="btn btn-primary">Home</button></a>
+
+<form action="/update/@Model.DishId" method="post">
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Chef"></span>
+        <label asp-for="Chef" for="exampleInputEmail1">Chef Name:</label>
+        <input asp-for="Chef" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="@Model.Chef">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Name"></span>
+        <label asp-for="Name" for="exampleInputEmail1">Dish:</label>
+        <input asp-for="Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="@Model.Name">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Calories"></span>
+        <label asp-for="Calories" for="exampleInputEmail1">Number of Calories</label>
+        <input asp-for="Calories" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="@Model.Calories">
+    </div>
+
+    <div class="form-group">
+            <span style="color: red;" asp-validation-for="Tastiness"></span>
+            <label asp-for="Tastiness" for="exampleFormControlSelect1">Tastiness:</label>
+            <select asp-for="Tastiness" class="form-control" id="exampleFormControlSelect1" value="@Model.Tastiness">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <span style="color: red;" asp-validation-for="Description"></span>
+            <label asp-for="Description" for="exampleFormControlTextarea1">Description:</label>
+            <textarea asp-for="Description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="@Model.Description"></textarea>
+        </div>
+    <p class="text-center"><button type="submit" class="btn btn-primary">Edit Dish!</button></p>
+</form>

@@ -1,0 +1,16 @@
+@using CRUDelicious.Models
+@model Dish
+
+<h1 style="text-align: center;">@Model.Name</h1>
+<h3 style="text-align: center;">Made with love by: @Model.Chef</h3>
+<a href="/"><button class="btn btn-primary">Home</button></a>
+
+<h2 style="text-align: center;">Description: <br> @Model.Description</h2>
+<br>
+<h4 style="text-align: center;">Calories: @Model.Calories</h4>
+<br>
+<h4 style="text-align: center;">Tastiness: @Model.Tastiness</h4>
+<br>
+
+<a href="/delete/@Model.DishId"><button class="btn btn-primary">Delete</button></a>
+<a href="/edit/@Model.DishId"><button class="btn btn-primary">Edit</button></a>

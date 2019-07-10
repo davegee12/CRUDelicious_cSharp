@@ -1,0 +1,39 @@
+@model Dish
+<h1 style="text-align: center;">Add a new dish!</h1>
+<a href="/"><button class="btn btn-primary">Home</button></a>
+
+<form asp-action="Create" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Chef"></span>
+        <label asp-for="Chef" for="exampleInputEmail1">Chef Name:</label>
+        <input asp-for="Chef" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Name"></span>
+        <label asp-for="Name" for="exampleInputEmail1">Dish:</label>
+        <input asp-for="Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter dish">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Calories"></span>
+        <label asp-for="Calories" for="exampleInputEmail1">Number of Calories</label>
+        <input asp-for="Calories" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter number of calories">
+    </div>
+
+    <div class="form-group">
+            <span style="color: red;" asp-validation-for="Tastiness"></span>
+            <label asp-for="Tastiness" for="exampleFormControlSelect1">Tastiness:</label>
+            <select asp-for="Tastiness" class="form-control" id="exampleFormControlSelect1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <span style="color: red;" asp-validation-for="Description"></span>
+            <label asp-for="Description" for="exampleFormControlTextarea1">Description:</label>
+            <textarea asp-for="Description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    <p class="text-center"><button type="submit" class="btn btn-primary">Add Dish!</button></p>
+</form>

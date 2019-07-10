@@ -1,0 +1,8 @@
+﻿<h1 style="text-align: center;">Welcome to CRUDelicious!</h1>
+<u><h3>Check out some recent dishes!</h3></u>
+@foreach (var dish in @ViewBag.AllDishes)
+{
+    <div><a href="@dish.DishId">@dish.Name</a> by @dish.Chef</div>
+}
+
+<a href="new"><button class="btn btn-primary">Add a Dish</button></a>
